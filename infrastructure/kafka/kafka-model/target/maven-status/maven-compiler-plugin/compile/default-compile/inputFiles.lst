@@ -1,0 +1,9 @@
+C:\Workspace\ddd-food-ordering-system\infrastructure\kafka\kafka-model\src\main\java\com\xl1\ddd\kafka\order\avro\model\OrderApprovalStatus.java
+C:\Workspace\ddd-food-ordering-system\infrastructure\kafka\kafka-model\src\main\java\com\xl1\ddd\kafka\order\avro\model\PaymentResponseAvroModel.java
+C:\Workspace\ddd-food-ordering-system\infrastructure\kafka\kafka-model\src\main\java\com\xl1\ddd\kafka\order\avro\model\RestaurantApprovalResponseAvroModel.java
+C:\Workspace\ddd-food-ordering-system\infrastructure\kafka\kafka-model\src\main\java\com\xl1\ddd\kafka\order\avro\model\RestaurantOrderStatus.java
+C:\Workspace\ddd-food-ordering-system\infrastructure\kafka\kafka-model\src\main\java\com\xl1\ddd\kafka\order\avro\model\PaymentRequestAvroModel.java
+C:\Workspace\ddd-food-ordering-system\infrastructure\kafka\kafka-model\src\main\java\com\xl1\ddd\kafka\order\avro\model\PaymentStatus.java
+C:\Workspace\ddd-food-ordering-system\infrastructure\kafka\kafka-model\src\main\java\com\xl1\ddd\kafka\order\avro\model\Product.java
+C:\Workspace\ddd-food-ordering-system\infrastructure\kafka\kafka-model\src\main\java\com\xl1\ddd\kafka\order\avro\model\RestaurantApprovalRequestAvroModel.java
+C:\Workspace\ddd-food-ordering-system\infrastructure\kafka\kafka-model\src\main\java\com\xl1\ddd\kafka\order\avro\model\PaymentOrderStatus.java
