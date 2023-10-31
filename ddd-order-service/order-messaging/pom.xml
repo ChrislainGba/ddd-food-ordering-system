@@ -13,5 +13,21 @@
 		  <groupId>com.xl1.ddd</groupId>
 		  <artifactId>order-application-service</artifactId>
 	  </dependency>
+	  <dependency>
+		    <groupId>com.xl1.ddd</groupId>
+	        <artifactId>kafka-model</artifactId>
+        </dependency>
+        <dependency>
+		    <groupId>com.xl1.ddd</groupId>
+	        <artifactId>kafka-consumer</artifactId>
+        </dependency>
+        <dependency>
+		    <groupId>com.xl1.ddd</groupId>
+	        <artifactId>kafka-producer</artifactId>
+        </dependency>
+        <dependency>
+		    <groupId>com.xl1.ddd</groupId>
+	        <artifactId>kafka-config-data</artifactId>
+        </dependency>
   </dependencies>
 </project>

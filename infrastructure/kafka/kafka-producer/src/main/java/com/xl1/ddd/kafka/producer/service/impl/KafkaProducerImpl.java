@@ -1,6 +1,7 @@
 package com.xl1.ddd.kafka.producer.service.impl;
 
 import java.io.Serializable;
+import java.util.concurrent.CompletableFuture;
 
 import org.apache.avro.specific.SpecificRecordBase;
 import org.springframework.kafka.KafkaException;
@@ -26,18 +27,29 @@ public class KafkaProducerImpl<K extends Serializable, V extends SpecificRecordB
         this.kafkaTemplate = kafkaTemplate;
     }
 
+ 
+    
     @Override
-    public void send(String topicName, K key, V message, ListenableFutureCallback<SendResult<K, V>> callback) {
-        log.info("Sending message={} to topic={}", message, topicName);
+	public void send(String topicName, K key, V message) {
+    	log.info("Sending message={} to topic={}", message, topicName);
+        CompletableFuture<SendResult<K, V>> completableFuture = new CompletableFuture<>();
         try {
-            ListenableFuture<SendResult<K, V>> kafkaResultFuture = kafkaTemplate.send(topicName, key, message);
-            kafkaResultFuture.addCallback(callback);
+        	kafkaTemplate.send(topicName, key, message)
+            .whenComplete((sendResult, exception) -> {
+                if (exception != null) {
+                	log.error("Error on kafka producer with key: {}, message: {} and exception: {}", key, exception.getMessage());
+                    completableFuture.completeExceptionally(exception);
+                } else {
+                    completableFuture.complete(sendResult);
+                }
+            });
         } catch (KafkaException e) {
-            log.error("Error on kafka producer with key: {}, message: {} and exception: {}", key, message,
+        	log.error("Error on kafka producer with key: {}, message: {} and exception: {}", key, message,
                     e.getMessage());
             throw new KafkaProducerException("Error on kafka producer with key: " + key + " and message: " + message);
         }
-    }
+	}
+    
 
     @PreDestroy
     public void close() {
@@ -46,5 +58,9 @@ public class KafkaProducerImpl<K extends Serializable, V extends SpecificRecordB
             kafkaTemplate.destroy();
         }
     }
+
+	
+
+	
 }
 

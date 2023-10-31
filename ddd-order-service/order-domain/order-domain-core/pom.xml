@@ -12,7 +12,6 @@
 	  <dependency>
 		  <groupId>com.xl1.ddd</groupId>
 		  <artifactId>common-domain</artifactId>
-		  <version>0.0.1-SNAPSHOT</version>
 	  </dependency>
   </dependencies>
   
